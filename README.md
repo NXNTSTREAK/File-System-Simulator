@@ -98,7 +98,7 @@ Still better life choice than 500 more medium tree problems.
 
 - No file contents → no cat, no joy  
 - `echo` is dumber than a bag of hammers  
-- `mv` only works in current dir (full paths? in this economy?)  
+- `mv` only works in current dir   
 - `rm -rf /` deletes everything — left it in for the vibes  
 - No tab completion (I would rather kms)  
 - Crashes sometimes → that's a feature called "surprise debugging"
