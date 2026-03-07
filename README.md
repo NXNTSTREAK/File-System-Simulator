@@ -1,6 +1,7 @@
 # NXNT – My Tiny Fake Filesystem (Because Real Ones Hurt My Feelings)
 
-I hit rock bottom somewhere between the 127th "invert binary tree" problem and yet another "serialize this BST while crying" question.
+I got so fricking tired of LeetCode tree problems.
+All those “invert binary tree”, “find the kth ancestor”, “serialize this shit” questions started to annoy me
 
 So I did the only reasonable thing left:  
 I built a pretend filesystem using trees so I could finally feel like the recursion was worth something.
@@ -23,7 +24,7 @@ nxnt:root/$
 
 ```
 mkdir banana
-mkdir -p existential/crisis/2026
+mkdir existential/crisis/2026
 touch please-save-me.txt
 rm oops.txt
 rm -r whole-career   # yes this works. yes I'm sorry.
@@ -52,7 +53,7 @@ nxnt:root/$ ls
 code/  dreams/  existential-dread.md  side-quest/  todo.txt
 
 nxnt:root/$ cd code
-nxnt:root/code/$ touch main.cpp    # peak comedy
+nxnt:root/code/$ touch my_lil_d.cpp    # peak comedy
 nxnt:root/code/$ cd ..
 nxnt:root/$ rm -r dreams
 nxnt:root/$ tree
@@ -66,12 +67,12 @@ root
 nxnt:root/$ where main
 root/code/main.cpp
 
-nxnt:root/$ echo "this project will fix me" > todo.txt
+nxnt:root/$ echo "help me, I'm drowning" > todo.txt
 nxnt:root/$ rm todo.txt
 nxnt:root/$ echo "we moved on (skill issue)"
 ```
 
-### How to summon the beast
+### How to summon this lil sh*t?
 
 ```bash
 g++ main.cpp -o nxnt
@@ -88,7 +89,7 @@ No dignity.
 - Recursion without stack overflow (mostly)  
 - Parent pointers (daddy issues: the data structure)  
 - Keeping children sorted alphabetically (OCD simulator 2026 edition)  
-- Not leaking memory like it's 2007  
+- Not leaking memory, except did leak something else
 - String splitting without therapy
 
 Still better life choice than 500 more medium tree problems.
@@ -118,6 +119,6 @@ Feel free to
 • add the most cursed feature imaginable  
 • send screenshots when it segfaults at 3 a.m.
 
-I'm going to stare at valgrind output and question every life choice that led me here.
+I need to sleep now, I am too tired for any sh*t to take care of. 
 
-Catch you in the next burnout project. 😭
+Catch you in the next shitty project. 

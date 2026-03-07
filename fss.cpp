@@ -223,7 +223,7 @@ void tree(Node* node, string prefix = "", bool isLast = true){
         cout << (isLast ? "└── " : "├── ");
     }
 
-    cout << node->name << endl;
+    cout << node->name << (node->isFile ? "" : "/") << endl;
 
     for(int i = 0; i < node->children.size(); i++){
 
