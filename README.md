@@ -14,7 +14,7 @@ Welcome to **NXNT**
 - 0% useful in real life  
 - 99% chance of mild entertainment
 
-You get a very serious™ prompt:
+You get a very serious prompt:
 
 ```
 nxnt:root/$
