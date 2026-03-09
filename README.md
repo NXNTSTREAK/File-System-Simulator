@@ -1,5 +1,5 @@
 # 🗂️ NXNT
-### My Tiny Fake Filesystem (Because Real Ones Hurt My Feelings)
+### My Tiny Fake Filesystem 
 
 ---
 
