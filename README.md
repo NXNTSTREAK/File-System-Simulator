@@ -1,189 +1,173 @@
-# 🗂️ NXNT
-### My Tiny Fake Filesystem 
+# NXNT
+
+A tiny in-memory filesystem built in C++.
+
+NXNT is a small project that simulates a filesystem using a tree data structure.  
+It does not interact with your real disk. Everything exists only in memory and disappears once the program exits.
+
+The goal of this project was to practice working with **trees, recursion, and path parsing** in a practical way instead of solving isolated algorithm problems.
 
 ---
 
-I got so fricking tired of LeetCode tree problems.
+## Overview
 
-All those  
-> “invert binary tree”  
-> “find the kth ancestor”  
-> “serialize this tree before you emotionally collapse”  
+NXNT behaves like a very small terminal filesystem.
 
-started to annoy me.
+You can create directories and files, navigate between folders, move items, delete them, and visualize the structure using a tree view.
 
-So I did the only reasonable thing left:
+All operations happen inside the program’s memory.
 
-I built a **pretend filesystem using trees** so I could finally feel like the recursion was worth something.
+Key characteristics:
 
----
-
-#  Welcome to **NXNT**
-*(Nothing eXists, Nothing Touches disk)*
-
-```
-💾 100% in-memory
-💀 100% disappears when you rage-quit
-🧩 0% useful in real life
-😌 99% chance of mild entertainment
-```
+- In-memory filesystem
+- Tree-based structure
+- Simple command interface
+- No external dependencies
+- Lightweight single program
 
 ---
 
-##  Your Very Serious Terminal
+## Example Terminal
+
+When you run the program, you will see a prompt like:
 
 ```
 nxnt:root/$
 ```
 
----
+You can then run filesystem-like commands.
 
-# ⚙️ Available Commands
-*(surprisingly not all broken)*
-
-```bash
-mkdir banana
-mkdir existential/crisis/2026
-touch please-save-me.txt
-rm oops.txt
-rm -r whole-career   # yes this works. yes I'm sorry.
-
-cd ..
-cd /
-cd back-to-reality
-
-ls
-tree                # the only pretty thing you'll see today
-pwd
-
-mv depression.md coping.md
-
-where my-will-to-live
-
-echo "it's fine"    # it's not fine
-
-history             # forensic evidence of your decline
-clear               # desperately tries to wipe the shame
-whoami              # nxnt (because even root gave up)
-
-help                # you're beyond help
-exit                # sweet release
-```
-
----
-
-# 🎭 Live Demonstration  
-### *(me slowly losing the plot)*
+Example session:
 
 ```
-nxnt:root/$ mkdir code dreams side-quest
-nxnt:root/$ touch todo.txt existential-dread.md
-
+nxnt:root/$ mkdir code projects
+nxnt:root/$ touch todo.txt
 nxnt:root/$ ls
-code/  dreams/  existential-dread.md  side-quest/  todo.txt
+
+code/  projects/  todo.txt
 
 nxnt:root/$ cd code
-nxnt:root/code/$ touch my_lil_d.cpp    # peak comedy
+nxnt:root/code/$ touch main.cpp
 nxnt:root/code/$ cd ..
-
-nxnt:root/$ rm -r dreams
 nxnt:root/$ tree
 ```
+
+Output:
 
 ```
 root
 ├── code
 │   └── main.cpp
-├── side-quest
+├── projects
 └── todo.txt
-```
-
-```
-nxnt:root/$ where main
-root/code/main.cpp
-
-nxnt:root/$ echo "help me, I'm drowning" > todo.txt
-nxnt:root/$ rm todo.txt
-
-nxnt:root/$ echo "we moved on (skill issue)"
 ```
 
 ---
 
-#  How To Summon This Lil Sh*t
+## Supported Commands
 
-```bash
+NXNT currently supports the following commands:
+
+```
+mkdir <dir>        create a directory
+touch <file>       create a file
+rm <file>          delete a file
+rm -r <dir>        delete a directory recursively
+
+cd <dir>           move into a directory
+cd ..              move to parent directory
+cd /               go to root directory
+
+ls                 list files and directories
+tree               display the filesystem structure
+pwd                print current directory
+
+mv <src> <dest>    rename or move a file/directory
+where <name>       search for a file in the filesystem
+
+echo <text>        print text
+
+history            show previously used commands
+clear              clear the terminal
+whoami             show current user
+help               list available commands
+exit               quit the program
+```
+
+---
+
+## Installation
+
+Compile using a C++ compiler.
+
+```
 g++ main.cpp -o nxnt
 ./nxnt
 ```
 
-```
-No CMake.
-No dependencies.
-No dignity.
-```
+No external libraries or build systems are required.
 
 ---
 
-<!-- #  Skills I Accidentally Levelled Up
+## Design
 
-```
-🌳 Path parsing (the part where I wanted to die)
-🔁 Recursion without stack overflow (mostly)
-👨‍👦 Parent pointers (daddy issues: the data structure)
-📚 Keeping children sorted alphabetically (OCD simulator 2026)
-🧼 Not leaking memory
-🧵 String splitting without therapy
-```
+The filesystem is implemented using a **tree structure**.
 
-Still better life choice than **500 more medium tree problems**.
+Each node represents either a file or a directory.
 
---- -->
+Important features of the implementation:
 
-# 🐞 Known Issues  
-*(features I refuse to fix)*
-
-```
-❌ No file contents → no cat, no joy
-❌ echo is dumber than a bag of hammers
-❌ mv only works in current dir
-❌ rm -rf / deletes everything — left it in for the vibes
-❌ No tab completion (I would rather kms)
-❌ Crashes sometimes → feature called "surprise debugging"
-```
+- Parent pointers for navigation
+- Recursive traversal for operations like `tree` and `where`
+- Path parsing for directory navigation
+- Alphabetically sorted children
+- Memory managed dynamically
 
 ---
 
-# 🗺️ Roadmap  
-*(aka lies I tell myself)*
+## Current Limitations
 
-```
-📄 Add `cat` so I can read my own suffering
-📋 Add `cp` (why though)
-💾 Save/load to disk (so the trauma persists)
-⌨️ Tab completion (send help)
-📝 In-memory vim that only knows :q! and :q
-```
+This project is intentionally minimal.
 
----
+Some features are not implemented yet:
 
-# 🧪 Contributions Welcome
+- Files do not store content
+- No `cat` command
+- Limited `mv` functionality
+- No tab completion
+- Filesystem state is not saved to disk
 
-Feel free to:
-
-```
-• break it
-• fix my memory leaks
-• add the most cursed feature imaginable
-• send screenshots when it segfaults at 3 a.m.
-```
+All data is lost when the program exits.
 
 ---
 
-# 💤 Closing Thoughts
+## Future Improvements
 
-I need to sleep now.
+Possible improvements include:
 
-I am **too tired for any sh*t to take care of.**
+- Add file content support
+- Implement `cat` command
+- Add copy (`cp`) functionality
+- Save and load filesystem state
+- Improve command parsing
+- Add tab completion
 
-See you in the next **shitty project**.
+---
+
+## Purpose
+
+This project was built as a learning exercise to better understand:
+
+- Tree data structures
+- Recursive algorithms
+- Filesystem concepts
+- Command parsing
+- Memory management in C++
+
+---
+
+## License
+
+This project is open for experimentation and learning.
+
+Feel free to modify it, extend it, or use it as a reference for similar projects.
