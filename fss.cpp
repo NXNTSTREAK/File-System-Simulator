@@ -217,21 +217,16 @@ void tree(Node* node, string prefix = "", bool isLast = true){
 
     cout << prefix;
 
-    if(prefix != ""){
+    if(prefix != "")
         cout << (isLast ? "└── " : "├── ");
-    }
 
     cout << node->name << (node->isFile ? "" : "/") << endl;
 
+    string newPrefix = prefix + (isLast ? "    " : "│   ");
+
     for(int i = 0; i < node->children.size(); i++){
-
         bool lastChild = (i == node->children.size() - 1);
-
-        tree(
-            node->children[i],
-            prefix + (prefix == "" ? "" : (isLast ? "    " : "│   ")),
-            lastChild
-        );
+        tree(node->children[i], newPrefix, lastChild);
     }
 }
 
@@ -378,7 +373,7 @@ int main(){
             ls(currDir);
         
         else if (cmd == "tree") 
-            tree(currDir,0);
+            tree(currDir);
         
         else if(cmd == "mkdir"){
             string name;
