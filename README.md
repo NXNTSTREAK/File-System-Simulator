@@ -18,7 +18,7 @@ I built a **pretend filesystem using trees** so I could finally feel like the re
 
 ---
 
-# 🧠 Welcome to **NXNT**
+#  Welcome to **NXNT**
 *(Nothing eXists, Nothing Touches disk)*
 
 ```
@@ -30,7 +30,7 @@ I built a **pretend filesystem using trees** so I could finally feel like the re
 
 ---
 
-## 🖥️ Your Very Serious Terminal
+##  Your Very Serious Terminal
 
 ```
 nxnt:root/$
@@ -110,7 +110,7 @@ nxnt:root/$ echo "we moved on (skill issue)"
 
 ---
 
-# 🚀 How To Summon This Lil Sh*t
+#  How To Summon This Lil Sh*t
 
 ```bash
 g++ main.cpp -o nxnt
@@ -125,7 +125,7 @@ No dignity.
 
 ---
 
-# 📈 Skills I Accidentally Levelled Up
+<!-- #  Skills I Accidentally Levelled Up
 
 ```
 🌳 Path parsing (the part where I wanted to die)
@@ -138,7 +138,7 @@ No dignity.
 
 Still better life choice than **500 more medium tree problems**.
 
----
+--- -->
 
 # 🐞 Known Issues  
 *(features I refuse to fix)*
